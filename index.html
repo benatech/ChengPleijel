@@ -1,79 +1,90 @@
-<!DOCTYPE html>
-<html>
+<HTML><HEAD>
+<TITLE>THE CHENG-PLEIJEL APPLET </TITLE>
+</HEAD>
+<BODY bgcolor=824811 text=ffffff link=20ff20 vlink=80ff80>
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Chengpleijel : ">
+<center>
+<h1>Cheng-Pleijel Point of a Quadrangle</h1>
+<applet code=ChengPleijelCanvas height=400 width=550>
+<p><b>*** If you can read this, your browser does not support the beta API
+version of java, sorry! ***</b><p>
+<param name=background value="0,0,100">
+<param name=e[1] value="A;point;free;300,250">
+<param name=e[2] value="B;point;free;300,150">
+<param name=e[3] value="C;point;free;400,150">
+<param name=e[4] value="D;point;free;400,250">
+<param name=e[5] value="ABCD;polygon;quadrilateral;A,B,C,D;0,0;0;black;0">
+<param name=e[6] value="H0;point;free;520,-1000;0,0">
+<param name=e[7] value="H3;point;free;520,1000;0,0">
+<param name=e[8] value="H1;point;lineSlider;H0,H3,520,270;0">
+<param name=e[9] value="H2;point;lineSlider;H0,H3,520,370;0">
+<param name=e[10] value="H;line;connect;H1,H2;0,0,0">
+<param name=e[11] value="O';point;free;350,150;0;0;0">
+<param name=e[12] value="O;point;chengpleijel;A,B,C,D,H1,H2,O';black;blue">
+<param name=e[13] value="OA;line;connect;O,A">
+<param name=e[14] value="OB;line;connect;O,B">
+<param name=e[15] value="OC;line;connect;O,C">
+<param name=e[16] value="OD;line;connect;O,D">
+</applet>
+</center>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+<p><big>W</big>here is 
+the <a href="http://link.springer.com/article/10.1007/BF00182945">Cheng-Pleijel</a> point of a quadrangle ?
+In the above applet, imagine a point <i>O'</i> at a certain height <i>H</i> 
+above the 
+flat plane containing the quadrangle <i>ABCD</i> and which orthogonally 
+projects down directly
+to the point <i>O</i> on the plane. 
+By definition, the Cheng-Pleijel point <i>O</i>
+is the point where the sum of the areas of the triangles <i>O'AB, O'BC, 
+O'CD, O'DA,</i>
+are at a minimum value for a given value of <i>H</i>.
+In the case of 
+a triangle, it is not hard to show that the Cheng-Pleijel
+point is exactly the incenter (center of the inscribed circle) of the triangle
+for any value of <i>H</i>.
+The situation becomes very different for a quadrangle, and can be quite
+complicated. Here, if <i>ABCD</i> can be circumscribed about
+a circle, then the Cheng-Pleijel point is again the
+center of the inscribed circle for any <i>H</i>. If not, then the 
+Cheng-Pleijel point actually changes its position for
+different values of <i>H</i>! The interesting case occurs when 
+the height <i>H</i>
+approaches zero, and the limit point <i>O' = O</i> 
+is now truly a point in the interior of the (convex)
+quadrangle, not just a projection. <p>
 
-    <title>Chengpleijel</title>
-  </head>
+  In this applet, you can experiment with different positions of <i>A,B,
+C,D,</i>
+and <i>H</i>, and observe how the position of <i>O</i> varies. 
+To change a point's
+position, press the mouse button
+on that point and drag it to a new location of your choice. The new location
+of the Cheng-Pleijel=
+point <i>O</i> will automatically be computed on the canvas. 
+The canvas grid size is
+1x1 unit, the height denotes the length of <i>H</i>, and the coordinates 
+of <i>O</i> are given right below the height value. Coordinates of the vertices
+of <i>ABCD</i> are supplied in the side tables, as well as the length of the
+sides. Be aware that if <i>ABCD</i> is not convex, then singularities can occur
+and if this happens, typing any key will reset the applet to its 
+original state. <p>
 
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/benatech/ChengPleijel">View on GitHub</a>
-
-          <h1 id="project_title">Chengpleijel</h1>
-          <h2 id="project_tagline"></h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/benatech/ChengPleijel/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/benatech/ChengPleijel/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Chengpleijel maintained by <a href="https://github.com/benatech">benatech</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
-</html>
+I created this applet by combining the works of many other java programs,
+and in particular, the Geometry applet written by D. Joyce has been of
+great help. The main innovation in this applet is the ChengPleijel class
+which enables the program to find the Cheng-Pleijel
+point using the method of steepest descent. Many questions still remain
+unanswered regarding the Cheng-Pleijel point.
+For example, can you find a formula for this point involving only the points
+<i>A,B,C,D,</i> and <i>H</i> ? what kind of curve is 
+traced out by <i>O</i> as <i>H</i> changes its value ?
+And if you happen to discover
+some unusual property of the Cheng-Pleijel point
+while playing with this applet, don't hesitate to let me know about it!
+Happy exploring!
+<p>
+<hr>
+Created originally with Linux JDK 1.0.1 by Ben Cheng
+</BODY>
+</HTML>
