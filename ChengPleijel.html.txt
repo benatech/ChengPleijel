@@ -1,0 +1,90 @@
+<HTML><HEAD>
+<TITLE>THE CHENG-PLEIJEL APPLET </TITLE>
+</HEAD>
+<BODY bgcolor=824811 text=ffffff link=20ff20 vlink=80ff80>
+
+<center>
+<h1>Cheng-Pleijel Point of a Quadrangle</h1>
+<applet code=ChengPleijelCanvas height=400 width=550>
+<p><b>*** If you can read this, your browser does not support the beta API
+version of java, sorry! ***</b><p>
+<param name=background value="0,0,100">
+<param name=e[1] value="A;point;free;300,250">
+<param name=e[2] value="B;point;free;300,150">
+<param name=e[3] value="C;point;free;400,150">
+<param name=e[4] value="D;point;free;400,250">
+<param name=e[5] value="ABCD;polygon;quadrilateral;A,B,C,D;0,0;0;black;0">
+<param name=e[6] value="H0;point;free;520,-1000;0,0">
+<param name=e[7] value="H3;point;free;520,1000;0,0">
+<param name=e[8] value="H1;point;lineSlider;H0,H3,520,270;0">
+<param name=e[9] value="H2;point;lineSlider;H0,H3,520,370;0">
+<param name=e[10] value="H;line;connect;H1,H2;0,0,0">
+<param name=e[11] value="O';point;free;350,150;0;0;0">
+<param name=e[12] value="O;point;chengpleijel;A,B,C,D,H1,H2,O';black;blue">
+<param name=e[13] value="OA;line;connect;O,A">
+<param name=e[14] value="OB;line;connect;O,B">
+<param name=e[15] value="OC;line;connect;O,C">
+<param name=e[16] value="OD;line;connect;O,D">
+</applet>
+</center>
+
+<p><big>W</big>here is 
+the <a href="http://link.springer.com/article/10.1007/BF00182945">Cheng-Pleijel</a> point of a quadrangle ?
+In the above applet, imagine a point <i>O'</i> at a certain height <i>H</i> 
+above the 
+flat plane containing the quadrangle <i>ABCD</i> and which orthogonally 
+projects down directly
+to the point <i>O</i> on the plane. 
+By definition, the Cheng-Pleijel point <i>O</i>
+is the point where the sum of the areas of the triangles <i>O'AB, O'BC, 
+O'CD, O'DA,</i>
+are at a minimum value for a given value of <i>H</i>.
+In the case of 
+a triangle, it is not hard to show that the Cheng-Pleijel
+point is exactly the incenter (center of the inscribed circle) of the triangle
+for any value of <i>H</i>.
+The situation becomes very different for a quadrangle, and can be quite
+complicated. Here, if <i>ABCD</i> can be circumscribed about
+a circle, then the Cheng-Pleijel point is again the
+center of the inscribed circle for any <i>H</i>. If not, then the 
+Cheng-Pleijel point actually changes its position for
+different values of <i>H</i>! The interesting case occurs when 
+the height <i>H</i>
+approaches zero, and the limit point <i>O' = O</i> 
+is now truly a point in the interior of the (convex)
+quadrangle, not just a projection. <p>
+
+  In this applet, you can experiment with different positions of <i>A,B,
+C,D,</i>
+and <i>H</i>, and observe how the position of <i>O</i> varies. 
+To change a point's
+position, press the mouse button
+on that point and drag it to a new location of your choice. The new location
+of the Cheng-Pleijel=
+point <i>O</i> will automatically be computed on the canvas. 
+The canvas grid size is
+1x1 unit, the height denotes the length of <i>H</i>, and the coordinates 
+of <i>O</i> are given right below the height value. Coordinates of the vertices
+of <i>ABCD</i> are supplied in the side tables, as well as the length of the
+sides. Be aware that if <i>ABCD</i> is not convex, then singularities can occur
+and if this happens, typing any key will reset the applet to its 
+original state. <p>
+
+I created this applet by combining the works of many other java programs,
+and in particular, the Geometry applet written by D. Joyce has been of
+great help. The main innovation in this applet is the ChengPleijel class
+which enables the program to find the Cheng-Pleijel
+point using the method of steepest descent. Many questions still remain
+unanswered regarding the Cheng-Pleijel point.
+For example, can you find a formula for this point involving only the points
+<i>A,B,C,D,</i> and <i>H</i> ? what kind of curve is 
+traced out by <i>O</i> as <i>H</i> changes its value ?
+And if you happen to discover
+some unusual property of the Cheng-Pleijel point
+while playing with this applet, don't hesitate to let me know about it!
+Happy exploring!
+<p>
+<hr>
+Created originally with Linux JDK 1.0.1 by Ben Cheng
+</BODY>
+</HTML>
