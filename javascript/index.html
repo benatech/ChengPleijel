@@ -21,16 +21,52 @@
   <header><strong>Cheng-Pleijel Canvas</strong> </header>
   <main>
     <canvas id="slate" width="550" height="400"></canvas>
-    <aside hidden>
+    <aside>
       <p class="hint">Drag red/orange points. Press <kbd>R</kbd> to reset.</p>
       <p>This canvas implements the Cheng-Pleijel point of a quadrangle.</p>
       <div id="metrics" class="metric"></div>
-      <h3>Applet-style elements</h3>
-      <textarea id="elementData"></textarea>
-      <button id="reload">Reload data</button>
-      <p class="hint">Format: <code>name;class;construction;data;nameColor;vertexColor;edgeColor;faceColor</code>.</p>
+      <h3 hidden>Applet-style elements</h3>
+      <textarea hidden id="elementData"></textarea>
+      <button hidden id="reload">Reload data</button>
+      <p hidden class="hint">Format: <code>name;class;construction;data;nameColor;vertexColor;edgeColor;faceColor</code>.</p>
     </aside>
   </main>
   <script type="module" src="./cheng-pleijel.js"></script>
+  <p> Where is the <a href="http://link.springer.com/article/10.1007/BF00182945">Check-Pleijel point</a> of a quadrangle ? Let us explore this question with the help of this visualization tool.
+Imagine the point <i>O'</i> is situated at a certain height <i>H</i>
+above the
+flat surface containing the quadrangle <i>ABCD</i> and which
+projects down directly
+to a point <i>O</i> (the <strong> Cheng-Pleijel point or CP point </strong> for short) on the surface.
+By definition, <i>O'</i>
+is the point where the sum of the areas of the triangles <i>O'AB, O'BC,
+O'CD, O'DA</i>
+are at a minimum value for a given value of <i>H</i> (default H=1).
+</p><p>
+In the case of three points on the planar surface, it can be seen that the CP
+point is exactly the incenter (center of the inscribed circle) of the triangle
+form by the three points independent of the value of <i>H</i>.
+The first non-trivial case occurs with four points on the plane forming a quadrangle. If the quadrangle <i>ABCD</i> can be circumscribed about
+a circle, then the CP point is again the
+center of the inscribed circle for any <i>H</i>. If not, then the
+CP point actually changes its position for
+different values of <i>H</i>! Interesting cases occur when the height <i>H</i>
+approaches zero (or infinity), and the CP point converges to some limiting point.
+</p><p>
+In this canvas, you can experiment with different positions of the four points <i>A,B,C,D,</i>
+and height <i>H</i>, and observe how the position of <i>O</i> varies.
+To change a point's
+position, just press the mouse button
+on that point and drag it to a new location of your choice. The new location
+of the CP
+point <i>O</i> will automatically be computed on the canvas.
+The canvas grid size is
+1x1 unit, and the height is just the length of <i>H</i>. The coordinates
+of the CP point <i>O</i> are given right below the height value. Coordinates of the vertices
+of <i>ABCD</i> are also supplied in the side tables, as well as the length of the
+sides. Be aware that if <i>ABCD</i> is not convex, then singularities can occur
+and if this happens, typing the R key will reset the canvas to its
+original state. You might want to zoom in on the canvas to obtain better mouse control for dragging points.
+</p>
 </body>
 </html>
