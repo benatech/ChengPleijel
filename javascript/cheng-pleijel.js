@@ -420,12 +420,12 @@ BC;line;connect;B,C;;;black
 CD;line;connect;C,D;;;black
 DA;line;connect;D,A;;;black
 H0;point;free;500,-1000;black;orange
-H1;point;free;500,1000;black;orange
+H1;point;free;500,1000;black;black
 H;point;lineSlider;H0,H1,500,300;black;orange
-K;point;lineSlider;H0,H1,500,350;black;orange
-h;line;connect;H,K;;;black
+T;point;lineSlider;H0,H1,500,350;black;orange
+h;line;connect;H,T;;;black
 O';point;free;350,200
-O;point;chengpleijel;A,B,C,D,H,K,O';black;blue
+O;point;chengpleijel;A,B,C,D,H,T,O';black;blue
 OA;line;connect;O',A;;;black
 OB;line;connect;O',B;;;black
 OC;line;connect;O',C;;;black
